@@ -1,0 +1,70 @@
+{{if $d.template == 'instructor'}}
+Hello Professor {{$d.name}}:
+
+The Best-Strategy Invitational (BSI) is a global competition among high-performing BSG companies worldwide. All student-teams finishing in first place in the simulation exercises conducted at your school are invited to participate in the BSI.
+
+Hosted and administered three times a year (in May, August, and December) by the BSG author team, the BSI event supports The United Nations Children's Fund - UNICEF (www.unicef.org) and participation in the BSI requires a $US {{$options.price_bsi}} charitable registration fee from each participant choosing to accept the invitation. All proceeds from the fees collected are donated to UNIFEC by GLO-BUS Software.
+
+We are pleased to inform you that one or more of your first-place-finishing teams has elected to participate in the BSI competition for {{$d.month_long}} of {{$d.year}}. You may visit the BSI competition page (http://www.bsg-online.com/home/stats/bsi) to follow their progress over the next two weeks. Your team(s) can be found in:
+
+{{foreach from=$d.teams item=team key=industry}} {{foreach from=$team item=blah key=company}}
+Industry {{$industry}}, Company {{$company}}
+{{/foreach}} {{/foreach}}
+Thank you, and may the best strategy win.
+
+{{else}}
+Dear BSI competitor:
+
+WELCOME
+
+We are honored that you have chosen to participate in the BSG Best-Strategy Invitational for {{$d.month_long}} {{$d.year}}. Only about 10% of all BSG teams received invitations to participate in the BSI. Every team receiving an invitation finished at the top of their class, so the field is packed with high-caliber talent.
+
+All participants who complete the competition will receive a Distinguished Participant Certificate suitable for framing. All fully participating members of the first place companies in each industry will also receive a Grand Champion Certificate. These certificates not only serve to document your honor of being invited to participate in the {{$d.month_long}} {{$d.year}} BSI but they also provide you with a basis for including your participation on your resume if you wish.
+
+YOUR COMPANY ASSIGNMENT
+
+The upcoming BSI competition will consist of {{$d.totals.bsi_industries}} industries and your team will be competing in Industry {{$d.industry_name}}. Your industry is comprised of {{$d.totals.industry[$d.industry]}} companies and your team has been assigned to Company {{$d.company_alpha}}.
+
+We have already set you up with a registered account for Industry {{$d.industry_name}}, Company {{$d.company_alpha}}. To access the Corporate Lobby for your BSI company, you must go to:
+
+http://bsi.bsg-online.com (note: this URL is different from the regular BSG address)
+and log in with your regular BSG user name and password. You must log in at the BSI home page to access your BSI account.
+
+THE DECISION SCHEDULE
+
+The decision schedule for the competition is as follows:
+
+	Decision    Deadline (in U.S. Central {{if $d.CST}}Standard{{else}}Daylight{{/if}} Time)
+	--------    ----------------------------------------
+	Year 11     Monday, {{($d.start_date+86400*0)|date_format:"%d-%b-%y"}}, 10:00 a.m.
+	Year 12     Tuesday, {{($d.start_date+86400*1)|date_format:"%d-%b-%y"}}, 10:00 a.m.
+	Year 13     Wednesday, {{($d.start_date+86400*2)|date_format:"%d-%b-%y"}}, 10:00 a.m.
+	Year 14     Thursday, {{($d.start_date+86400*3)|date_format:"%d-%b-%y"}}, 10:00 a.m.
+	Year 15     Friday, {{($d.start_date+86400*4)|date_format:"%d-%b-%y"}}, 10:00 a.m.
+	Year 16     Monday, {{($d.start_date+86400*7)|date_format:"%d-%b-%y"}}, 10:00 a.m.
+	Year 17     Tuesday, {{($d.start_date+86400*8)|date_format:"%d-%b-%y"}}, 10:00 a.m.
+	Year 18     Wednesday, {{($d.start_date+86400*9)|date_format:"%d-%b-%y"}}, 10:00 a.m.
+	Year 19     Thursday, {{($d.start_date+86400*10)|date_format:"%d-%b-%y"}}, 10:00 a.m.
+	Year 20     Friday, {{($d.start_date+86400*11)|date_format:"%d-%b-%y"}}, 10:00 a.m.
+	
+When you log-in to your BSI Corporate Lobby and view the Decision Schedule, the system will automatically convert the deadline dates and times above and display them in your local time.
+
+The results for each decision year will be available within 30 minutes of the deadline. The decision deadlines will be strictly enforced. The nature of the decision schedule does not allow for processing delays or re-runs.
+
+GROUND RULES
+
+It is expected that you and your co-managers will run your BSI company in a professional and business-like manner throughout the entire two weeks of competition, irrespective of how well your company is performing. Your invitation to participate in the Best-Strategy Invitational means that your team turned in a truly outstanding performance in the BSG simulation exercise conducted at your school. Most of you are used to seeing your company name at the top of the industry rankings after each decision, but you will be up against {{$d.totals.industry[$d.industry]-1}} other very good, capably-managed companies in your BSI industry—you should expect that the level of competition will be intense and that the decision-makers on rival companies will be shrewd. As the BSI results are posted each day, please do not be discouraged if your BSI company ranking falls short of being the best in the industry—all companies cannot have a #1 ranking. But all companies can be businesslike and professional in running their companies and be a credit to the schools they represent.
+
+To help maintain the integrity and professionalism of the competition through Year 20, there are circumstances that can result in the removal of a team from the competition:
+
+Before the Year 11 decision deadline, at least one team member must log-in to your BSI Corporate lobby, open the Decisions and Reports program, and enter and save decisions for Year 11. Companies left unattended are subject to removal from the competition without notice.
+Manage your BSI company in a rational and business-like manner. Decision entries that we judge to be non-businesslike or made deliberately to undermine the integrity of the competition are subject to change by the BSI administrative staff. Companies operated in a manner not in the spirit of the simulation are subject to removal from the competition without notice.
+As for us, we promise to do our very best to manage the BSI competition in a very real-world and unbiased manner.
+
+Good luck, and may the best strategy win !
+
+{{/if}}
+Greg Stappenbeck
+Ira Thrasher
+
+The BSI Administration Team
