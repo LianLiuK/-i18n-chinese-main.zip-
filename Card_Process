@@ -1,0 +1,81 @@
+{{if isset($options.payflow_success) && $options.payflow_success}}
+Thank You
+{{if isset($options.isPremium) && $options.isPremium}}
+
+{{/if}}
+
+Your card was successfully charged for US $ {{$d.total}}
+Transaction Confirmation # {{$options.trans_id}}
+{{if isset($options.is_bsi_registration) && $options.is_bsi_registration}}
+Thank you for registering to compete in the {{$options.bsi_info.descript}} Best Strategy Invitational.
+
+On {{$options.bsi_info.date_details|date_format:"l, F jS"}} you will receive an e-mail message containing the log-in information for your BSI account.
+
+Best of luck in the competition!
+
+{{elseif isset($options.bookstore) && $options.bookstore}}
+An email containing a pdf of the {{$options.qty}} {{$options.prodname}} {{$options.text_package_name}} Pre-Paid Access Codes has been sent to {{$options.email}}.
+
+You may also view/save the pdf.
+
+Please reference code {{$options.order_id}}-{{$options.trans_id}} if you have any questions concerning your payment.
+
+{{elseif isset($options.school_payment) && $options.school_payment}}
+Our staff will receive notification of your payment and will send your Pre-Paid Access Codes if you have not already received them after reviewing your order.
+
+If you have any questions concerning your payment, please reference the Transaction Confirmation Number as well as your invoice number (if available).
+
+{{include file="templates/ReturnToInstructorCenter.html"}} {{else}} Continue To Your Corporate Lobby {{/if}}
+{{elseif isset($options.payflow_declined) && $options.payflow_declined}}
+Your card was declined
+{{if isset($options.isPremium) && $options.isPremium}}
+
+{{/if}}
+Please try a different card.
+{{if isset($options.zip) && $options.zip || isset($options.cvv2) && $options.cvv2 || isset($options.payflow_insufficient_funds) && $options.payflow_insufficient_funds}}
+{{if isset($options.payflow_insufficient_funds) && $options.payflow_insufficient_funds}}
+Your card reports insufficient funds to complete the purchase.
+{{/if}} {{if isset($options.zip) && $options.zip}}
+The billing address you entered does not match the address on file with your bank.
+{{/if}} {{if isset($options.cvv2) && $options.cvv2}}
+The Security Code you entered does not match your card.
+{{/if}}
+{{/if}} {{if isset($options.payflow_voice_request) && $options.payflow_voice_request}}
+You must call your card company and verify you are making this charge before they will allow it to be approved. You may also try a different card.
+{{/if}}
+{{if isset($options.bookstore) && $options.bookstore}} {{/if}} Try A Different Card
+{{elseif isset($options.payflow_unavailable) && $options.payflow_unavailable}}
+GLO-BUS Error
+GLO-BUS is currently experiencing problems with its credit card processor.
+Please try registering again in a few hours.
+We appologize for the temporary inconvenience.
+{{elseif isset($options.payflow_billing_mismatch) && $options.payflow_billing_mismatch}}
+Your card was declined
+{{if isset($options.isPremium) && $options.isPremium}}
+
+{{/if}}
+Incorrect Address
+The billing address you entered did not match the address on file with your credit card company.
+Please call us at {{$options.support_number}} for us to process your payment.
+
+{{elseif isset($options.payflow_cvv2_mismatch) && $options.payflow_cvv2_mismatch}}
+Card Verification Code Error
+{{if isset($options.isPremium) && $options.isPremium}}
+
+{{/if}}
+Please try a different card.
+The verification code you entered does not match the code that your bank has on record for the credit/debit card you used.
+
+The ${{$d.total}} account registration fee that you just attempted to pay will appear on your credit card account as an "pending" charge, but the charge has been automatically voided and will not be collected.
+
+Option 1: Double-check the card verification code and try again
+Option 2: Use a different card
+{{if isset($options.bookstore) && $options.bookstore}} {{/if}} Try Again
+To pay the registration fee later, return to the {{$options.prodname}} home page and log-in with the user name and password you just created for your account. You will arrive automatically at the account payment page where you can try making the credit/debit card payment again.
+
+{{else}}
+System Error
+There was an error on our server while processing your payment.
+Your card has not been charged.
+Please try again later.
+{{/if}}
