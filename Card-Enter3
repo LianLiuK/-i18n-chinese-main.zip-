@@ -1,0 +1,114 @@
+{{if isset($d.show_downtime_message) && $d.show_downtime_message}}
+Account Activation Unavailable
+Your account cannot be activated at this time. Our credit card processor has scheduled maintenance at this time and we are currently unable to process your credit card payment. You should return to this page to activate your account after {{$d.maintenance_end|date_format:"%I:%M %p on %A, %B %e"}}. Click the refresh link at the bottom of the screen to see if the activation process is available again.
+
+If you leave this page before that time, enter your email address and password in the login form on the home page and you will arrive at the payment screen. This will be the email address and password you entered in the previous step of this registration process.
+
+Click here to Refresh this screen and check if the activation process is available
+{{else}} {{if isset($options.is_bsi_registration) && $options.is_bsi_registration}}
+Complete the BSI-Registration Process
+{{elseif isset($options.school_payment) && $options.school_payment}}
+Pay For Multiple Pre-Paid Access Codes
+{{elseif isset($options.bookstore) && $options.bookstore}}
+Purchase {{$options.prodname}} {{$options.text_package_name}} Pre-Paid Access Codes
+{{if isset($options.isPremium) && $options.isPremium}}
+
+{{/if}}
+Course Information:
+Instructor:
+{{$options.game_info.t_fname}} {{$options.game_info.t_lname}}
+Course/Section ID:
+{{$options.game_info.cs_name}}
+School:
+{{$options.game_info.school}}
+ 
+Order ID:
+{{$options.order_id}}
+Number of Codes:
+{{$options.qty}}
+Cost per Code:
+US ${{$options.price_unit}}
+Total Due:
+US ${{$options.price_total}}
+{{else}}
+Complete the {{if isset($options.isPremium) && $options.isPremium}}{{$options.prodname}} {{$options.text_package_name}}{{/if}} Registration Process
+{{/if}}
+{{if !isset($options.show_invoice_field) || !$options.show_invoice_field}} {{/if}} {{if isset($options.bookstore) && $options.bookstore}} {{/if}}
+{{if isset($errors)}}
+{{section name=error loop=$errors}}
+{{$errors[error].error}}
+{{/section}}
+{{/if}}
+Card Information:
+We accept Visa, MasterCard, Discover, and American Express. Simply complete the form below, identifying the credit card account to which payment should be charged, and click "Review Payment Information" to review and confirm your information before your card is charged.
+First Name:
+{{$d.fname}}
+Last Name:
+{{$d.lname}}
+Card Number:
+{{$d.acct}}
+Major Cards Accepted Major Cards Accepted Major Cards Accepted Major Cards Accepted
+Expiration Date:
+
+-- Month --
+ / 
+-- Year --
+Security Code:
+{{$d.cvv2}}
+{{if isset($options._creditpayment_international) && $options._creditpayment_international}}
+(optional)
+{{/if}}
+The security code is the last 3 digits appearing on the signature line on the back of your Visa, MasterCard, or the 4 digit number adjacent to the credit card number on the front of your American Express card.
+{{if isset($options.show_invoice_field) && $options.show_invoice_field}}
+Email Address:
+{{$d.receipt_email}}
+Email address to which a receipt email should be sent (optional).
+Invoice Number:
+{{$d.invoice}}
+{{/if}} {{if isset($options.show_total_field) && $options.show_total_field}}
+Amount:
+US $
+{{$d.total}}
+You must enter an amount using 2 decimal places (400.00 for example)
+{{/if}}
+{{if isset($options._creditpayment_international) && $options._creditpayment_international}} {{if !isset($options.bookstore) || !$options.bookstore}}
+View the payment form for US credit cards.
+{{/if}} {{/if}}
+{{if !isset($options._creditpayment_international) || !$options._creditpayment_international}}
+Card Billing Address:
+Street Address:
+{{$d.street}}
+City:
+{{$d.city}}
+State:
+
+-- State --
+Zip Code:
+{{$d.zip}}
+-
+{{$d.zip4}}
+{{if !isset($options.bookstore) || !$options.bookstore}}
+View the payment form for Non-US credit cards.
+{{/if}}
+{{/if}}
+{{if isset($options.school_payment) && $options.school_payment}}
+Your card will NOT be charged when you click this button.
+
+You will be given the choice to either charge your card or return to this page to correct your information.
+
+{{elseif isset($options.bookstore) && $options.bookstore}}
+Your card will NOT be charged when you click this button.
+
+You will be given the choice to either charge your card or return to this page to correct your information.
+
+{{else}}
+The registration fee for your account is US ${{$d.total}}.
+
+On the next page you will review your payment information and be given the choice to either charge your card or return to this page to correct your information.
+
+{{/if}}
+Review Payment Information
+{{$options.prodname}} customer service will be glad to answer any questions you have concerning your registration. You may reach us in any of the following ways:
+
+Email: CustomerService@{{$options.domain}}.com
+Phone: {{$options.support_number}}
