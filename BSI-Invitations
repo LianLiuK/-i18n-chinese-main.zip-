@@ -1,0 +1,39 @@
+Dear Team {{$d.cname}} Co-manager:
+
+You and your co-managers are formally invited to compete in the BSG Best-Strategy Invitational for {{$d.month_long}} {{$d.year}}. The Invitational is conducted online and consists of a 10-round playing of The Business Strategy Game among participants from universities worldwide. Only the co-managers of companies across the world that are industry champions are invited to participate, so your invitation puts you in a pretty exclusive group. The Best-Strategy Invitational will be conducted online over a two-week period that begins {{$d.start_date|date_format:"%d-%b-%y"}} and ends {{$d.end_date|date_format:"%d-%b-%y"}}.
+
+The BSI event supports The United Nations Children's Fund - UNICEF (www.unicef.org) and participation in the BSI requires a non-refundable $US {{$options.price_bsi}} charitable registration fee from each participant, payable on-line by credit or debit card. All proceeds from the charitable registration fees collected are donated to UNIFEC by GLO-BUS Software, Inc., and a complete accounting of all fees and donations will be posted on the web site following the BSI event.
+
+If you and/or your teammates accept the invitation to compete, you will be managing a BSG company in competition against companies from 10 to 11 other universities according to the following schedule:
+
+
+     Decision
+       Year         Day         Date       Deadline*
+     --------    ---------    --------    ----------
+     Year 11     Monday       {{($d.start_date+86400*0)|date_format:"%d-%b-%y"}}   {{$d.start_date|date_format:"%I:%M %p"}}
+     Year 12     Tuesday      {{($d.start_date+86400*1)|date_format:"%d-%b-%y"}}   {{$d.start_date|date_format:"%I:%M %p"}}
+     Year 13     Wednesday    {{($d.start_date+86400*2)|date_format:"%d-%b-%y"}}   {{$d.start_date|date_format:"%I:%M %p"}}
+     Year 14     Thursday     {{($d.start_date+86400*3)|date_format:"%d-%b-%y"}}   {{$d.start_date|date_format:"%I:%M %p"}}
+     Year 15     Friday       {{($d.start_date+86400*4)|date_format:"%d-%b-%y"}}   {{$d.start_date|date_format:"%I:%M %p"}}
+
+     Year 16     Monday       {{($d.start_date+86400*7)|date_format:"%d-%b-%y"}}   {{$d.start_date|date_format:"%I:%M %p"}}
+     Year 17     Tuesday      {{($d.start_date+86400*8)|date_format:"%d-%b-%y"}}   {{$d.start_date|date_format:"%I:%M %p"}}
+     Year 18     Wednesday    {{($d.start_date+86400*9)|date_format:"%d-%b-%y"}}   {{$d.start_date|date_format:"%I:%M %p"}}
+     Year 19     Thursday     {{($d.start_date+86400*10)|date_format:"%d-%b-%y"}}   {{$d.start_date|date_format:"%I:%M %p"}}
+     Year 20     Friday       {{($d.start_date+86400*11)|date_format:"%d-%b-%y"}}   {{$d.start_date|date_format:"%I:%M %p"}}
+     ----------------------------------------------------
+     * Central {{if $d.CST}}Standard{{else}}Daylight{{/if}} Time (U.S. and Canada) GMT -0{{if $d.CST}}6{{else}}5{{/if}}:00
+Each member of your team who accepts the invitation will have a BSG co-manager account for the team you are assigned. Your BSI account will be set up automatically and account log-in information will be e-mailed in the week prior to the beginning of the competition. Each participant will receive a frameable Distinguished Participant Certificate (which will provide the necessary documentation for listing this recognition and achievement award on your resume) and the winner of your BSI industry will be named "Grand Champion." Only those participants who pay the $US {{$options.price_bsi}} charitable registration fee are eligible to receive a Distinguished Participant Certificate (or a Grand Champion certificate should your team finish the competition in 1st place).
+
+Please get together with your co-managers and decide if you would like to participate in the Best-Strategy Invitational for {{$d.month_long}} {{$d.year}}. Each individual team member who wishes to participate in the competition must accept their own invitation. The deadline for accepting the invitation is {{$d.registration_period|date_format:"%d-%b-%y"}} at {{$d.registration_period|date_format:"%I:%M %p"}} Central {{if $d.CST}}Standard{{else}}Daylight{{/if}} Time (GMT -0{{if $d.CST}}6{{else}}5{{/if}}:00). If you wish to compete against some of the best BSG teams in the world, click here to ACCEPT your invitation, or copy and paste this link into your browser:
+
+{{$d.weburl}}users/awards/BSI-Register.html?id={{$d.acct_id}}&check={{$d.check}}{{if isset($d.lateRegister) && $d.lateRegister}}&lateReg=1{{/if}}
+as soon as possible to reserve your team's place in the competition. If you do not wish to participate, please click here to DECLINE your invitation.
+We look forward to hearing from you soon.
+
+Sincerely,
+
+Greg Stappenbeck
+Ira Thrasher
+
+The BSG Author Team
