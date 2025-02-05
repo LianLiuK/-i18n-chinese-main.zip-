@@ -1,0 +1,29 @@
+Dear Professor {{$d.lname}}:
+
+I am one of the co-authors of the {{$options.prodname_long}} simulation and was delighted to learn that you recently registered as an instructor at www.{{$options.domain}}.com. To help you determine whether {{$options.prodname}} is suitable for a course you teach, I strongly suggest doing five things:
+
+Read the first 23 pages of the Instructor’s Guide—this is the quickest way to get a very good overview of {{$options.prodname_long}}, the array of built-in features for students and instructors, and suggestions for using the simulation in an upcoming course. To access the Instructor’s Guide, click on its link in the Instructor Resources Menu on the left side of the Instructor Center page.
+Sign up for one of our upcoming web conferences for first-time users that cover explanations of how things work, and Q&A. ite, explanations of how things work, and Q&A. You can see the schedule of future training webinars and sign up at this link. If none of the dates and times work for you, then contact me directly and we can arrange one to suit your schedule.
+Click on the "Explore Running a {{$options.prodname}} Company" selection in the left-side navigation menu to view the decision application, make trial decision entries, and see the performance outcomes for an instructor-run company that competes with three rival companies. This will give you good understanding of how the simulation works and what the student experience is like.
+Check out whether {{$options.prodname}} ValuePak—a complete text-simulation-case package for strategy courses delivered online at an appealingly low price—is interesting to you. To preview the text and cases that you can use to complement use of {{$options.prodname_long}} simulation, just click on the red button in the {{$options.prodname}} ValuePak section on the left side of your Instructor Center page.
+A time-efficient way to preview the website is to watch the Instructor Site Video Tour and the Student Site Video Tour—to access these two videos, click on the Video Tutorials & Help heading in the navigation menu on the left side of the Instructor Center).
+I invite you to explore whatever other menu links you wish—you have full access to all aspects of the {{$options.prodname}} simulation exercise. I would add that {{$options.prodname_long}} connects very tightly to the content of all the leading strategy texts and is also well-suited for international business, global marketing, and entrepreneurship courses. Plus, it is exceptionally easy to use from both a student and instructor perspective.
+
+You now have full access to all aspects of the {{$options.prodname}} simulation exercise, and I encourage you to check out any of the other menu links that interest you—the sample course schedules are particularly useful for seeing how the simulation can fit into your daily class schedule and course syllabus. I would add that {{$options.prodname_long}} connects very tightly to the content of all the leading strategy texts and is also well-suited for international business, global marketing, and entrepreneurship courses. Plus, it is exceptionally easy to use from both a student and instructor perspective.
+
+McGraw Hill's current price for {{$options.prodname_long}} is US${{$options.price_display}} per student, which is typically paid by credit card when class members register at www.{{$options.domain}}.com. However, we can also arrange for direct billing to you or your college/university, and {{$options.prodname}} is also marketed as part of a bundled package that class members can purchase with any new copy of a McGraw-Hill text. For information about bundling {{$options.prodname}} with a McGraw-Hill text, please contact your local McGraw-Hill account representative or {{$options.mh_marketing_rep}}, McGraw-Hill Marketing Manager, {{$options.mh_marketing_rep_email}}.
+
+Thank you again for registering. I can assure you that the {{$options.prodname}} author team will do everything in our power to make your experience with {{$options.prodname_long}} highly positive and successful. I look forward to hearing from you if I can be of any assistance. I'll be glad to answer questions, provide advice and guidance, and otherwise be responsive to whatever issues you may have.
+
+With best regards,
+
+Arthur A. Thompson
+Co-author of {{$options.prodname_long}}
+John R. Miller Professor of Business Administration (Retired)
+The University of Alabama
+
+Office Phone: 205-722-9145
+Cell Phone: 205-394-0499
+E-mail: art@{{$options.domain}}.com
+
+ 
