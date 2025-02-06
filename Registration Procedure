@@ -1,0 +1,37 @@
+{{if $options.isPremium}}{{$options.prodname}} {{$options.text_package_name}}{{else}}{{$options.prodname_long}}{{/if}} Registration Procedure — Industry {{$d.i_name}}
+{{if $options.isPremium}}
+It is important that each individual student register a {{$options.prodname}} {{$options.text_package_name}} account. Only registered students gain access to the {{$options.prodname}} {{$options.text_package_name}} course materials and features (chapter-end quizzes, exams prepared by the instructor, {{$options.prodname}} quizzes, peer evaluation exercises, name listing in the instructor's online grade book, and more).
+
+{{else}}
+It is important that each student register for a {{$options.prodname}} account. Only registered students have anytime, anywhere access to the information available in the {{$options.prodname}} corporate lobby. Furthermore, only registered students may complete Quiz 1, Quiz 2, and Peer Evaluation online assignments. The name of each registered student will appear in the instructor’s online grade book, and a simulation grade is calculated for the instructor automatically for each registered student.
+
+{{/if}}
+To register:
+
+Launch your web browser and go to https://{{$d.product_link}}/.
+Click the button for New Students.
+Enter your Company Registration Code. Make sure that you enter the registration code for the company that you have been assigned. The company registration codes are:
+{{section name=c loop=$d.codes}} {{/section}}
+Company	Company
+Registration Code
+Company {{$d.codes[c].letter}}	{{$d.codes[c].code}}
+Complete the brief registration form and click the Continue button at the bottom of the form.
+Select your payment option:
+Use a Pre-Paid Access Code
+{{if $options.isPremium}} On the next page, enter the pre-paid access code (PAC) that you purchased and click the PAC Registration button. {{else}} On the next page, enter your Prepaid Access Code (PAC) and click the PAC Registration button. Your PAC can be found on the 3x5 card that came packaged with your text (assuming your instructor special-ordered a text-simulation package and you purchased the new text-simulation package from your campus book store).
+
+If you purchased a used text, then you should click the Credit Card Registration button. The registration fee is ${{$options.price}} and payment may be made using Visa, MasterCard, or American Express.
+
+{{/if}}
+Use a Credit/Debit Card
+Then click the Credit/Debit Card Registration button on the next page. The registration fee is ${{$options.price}} for each team member. Have a credit/debit card ready. Payment may be made using Visa, MasterCard, Discover, or American Express. Should you not have a credit card, the easiest alternative is to use a teammate or friend's credit card to pay your registration fee and then reimburse him or her by cash or check.
+
+
+{{if $options.isPremium}}
+Following registration, you will be directed to your Corporate Lobby page where you instantly have full access to all {{$options.prodname}} {{$options.text_package_name}} materials and can view/print the text chapters, the chapter-end exercises, the {{$d.student_manual}} for {{$options.prodname_long}}, and browse through all the course materials and assignments. You should spend 15-20 minutes familiarizing yourself with the menus, links, and information appearing on your Corporate Lobby page.
+
+{{else}}
+Following registration, you will be directed to your Corporate Lobby page where you can view or download the {{$d.student_manual}}, view or print the decision schedule, and browse through all the other information links explaining how {{$options.prodname}} works. It is important you spend time reading these information links. It will take about 15 minutes.
+
+{{/if}}
+At your earliest convenience, you and your teammates should decide on a company name and enter it using the link at the top of your Corporate Lobby page.
