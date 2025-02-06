@@ -1,0 +1,245 @@
+# How to Update a File Directly on GitHub and Create a Pull Request
+
+## Step 1: Open the Repository on GitHub
+1. Navigate to this GitHub repository in your web browser: [https://github.com/glo-bus/i18n-chinese](https://github.com/glo-bus/i18n-chinese)
+2. Go to the branch you wish to work on (e.g., `main` or a feature branch).
+
+---
+
+## Step 2: Locate the File
+1. Browse the repository structure or use the search bar to find the file you wish to update/translate.
+2. Click on the file name to open it.
+
+---
+
+## Step 3a: Edit the `.xlf` File
+1. In the `.xlf` file view, click the **pencil icon** (‚úèÔ∏è) at the top-right corner of the file content to start editing.
+
+2. **Make Changes**:
+   - Locate the `<target>` tags that require updates.
+   - Update the translation text while keeping the XML structure intact (e.g., `<ph>` tags or placeholders should not be altered).
+   - Example:
+     ```xml
+     <target>Nuevo texto traducido con <ph id="0" equiv="INTERPOLATION" disp="{{selectedChartTitle}}"/> correctamente</target>
+     ```
+
+3. **Set the `state` to "final"**:
+   Ensure the `<segment>`'s `state` is set to `"final"`:
+   ```xml
+   <segment state="final">
+
+4. Double-check your changes for accuracy and to ensure you didn‚Äôt accidentally modify unrelated parts of the file.
+
+## Step 3b: Edit the `.doc` or `.ppt ` File
+1. In the file view, click the **pencil icon** (‚úèÔ∏è) at the top-right corner of the file content to start editing.
+
+2. Simply **make changes** by replacing the text with the updated translation.
+
+3. Double-check your changes for accuracy and to ensure you didn‚Äôt accidentally modify unrelated parts of the file.
+
+## Step 3c: Edit an Email Template
+1. Locate the Email Template File:
+    * Use the repository's file explorer or search function to find the email template you want to edit (e.g., a `.html` file).
+2. Open the File in Edit Mode:
+    * In the file view, click the pencil icon (‚úèÔ∏è) at the top-right corner of the file to enable editing.
+3. Modify the Text Content:
+    * **Update only the human-readable text**, leaving the HTML structure and Smarty (PHP) template tags intact.
+    * For example, in the following line:
+    ```
+    <h1>C√≥mo restablecer la contrase√±a de {{$options.prodname}} </h1>
+    ```
+    * Change the text "C√≥mo restablecer la contrase√±a de" but leave `{{$options.prodname}}` as is.
+    * Another example:
+    ```
+    <p>Hola {{$d.info.fname}} {{$d.info.lname}},</p>
+    ```
+    * Update "Hola" or other text, but do not modify `{{$d.info.fname}} {{$d.info.lname}}`.
+    * Ensure you do not alter Smarty variables like `{{$options.prodname}}`, `{{$d.info.fname}}`, or `{{if ... }} blocks.
+4. Preserve HTML Tags:
+  * Ensure the structure of the HTML tags remains unchanged. For example, in this snippet:
+    ```
+    <ol>Haz clic en el siguiente enlace para abrir una ventana segura del navegador.</ol>
+    ```
+  * You can update the text `Haz clic en el siguiente enlace para abrir una ventana segura del navegador.` but do not remove or modify the `<ol>` tags.
+5. Double-Check Links and Dynamic Content:
+  * Ensure links or dynamic content inside variables remain untouched, like:
+    ```
+    <a href="{{if isset($d.weburl_link) && $d.weburl_link}}{{$d.weburl_link}}{{else}}{{$weburl_secure}}{{/if}}home/reset-password?id={{$d.info.acct_id}}&amp;token={{$d.info.hash|escape:"urlpathinfo"}}">Restablecer contrase√±a ahora</a>
+    ```
+  * You may change "Restablecer contrase√±a ahora" but **do not edit the `href` or template variables**.
+6. Preview Changes:
+  * Before saving, review your changes to ensure only the intended text has been updated, and all HTML and template tags remain unaltered.
+7. Save Changes:
+  * Scroll to the bottom of the page, add a descriptive commit message (e.g., Update Spanish translation in email template), and choose to create a new branch or commit directly to your working branch.
+
+## Step 3d: Translating a PHP Object
+
+When translating a PHP object like the one provided, focus on updating the `title` and other human-readable text strings, ensuring the structure and keys remain unchanged. Here‚Äôs a detailed guide:
+
+1: Locate the Relevant Section
+- Identify the PHP object in the file and find the human-readable strings, such as those in the `title` and `ans` arrays.
+
+2: Replace the Strings with Translations
+- Update the text values while keeping the keys (`key`, `type`, `maxPts`, etc.) and structure intact.
+- Example: Translate `title` and `ans['title']` fields into the target language, such as Chinese.
+
+  #### **Original Example**:
+  ```php
+  [
+      'type' => 'heading',
+      'title' => 'Co-Manager Meetings',
+  ],
+  [
+      'key' => '1',
+      'type' => 'mc',
+      'title' => 'Attendance at co-managers\' meetings',
+      'ans' => [
+          ['key' => 1, 'title' => 'Habitually absent'],
+          ['key' => 2, 'title' => 'Missed close to 50% of our meetings'],
+          ['key' => 3, 'title' => 'Missed about 20-30% of our meetings'],
+          ['key' => 4, 'title' => 'Missed about 10-20% of our meetings'],
+          ['key' => 5, 'title' => 'Very dependable; missed only one or two meetings'],
+          ['key' => 6, 'title' => 'Always present'],
+      ],
+      'maxPts' => 6,
+  ],
+  ```
+  #### **Translated to Chinese**
+  ```php
+  [
+      'type' => 'heading',
+      'title' => 'ÂÖ±ÂêåÁªèÁêÜ‰ºöËÆÆ',
+  ],
+  [
+      'key' => '1',
+      'type' => 'mc',
+      'title' => 'ÂèÇÂä†ÂÖ±ÂêåÁªèÁêÜÁöÑ‰ºöËÆÆ',
+      'ans' => [
+          ['key' => 1, 'title' => 'ÁªèÂ∏∏Áº∫Â∏≠'],
+          ['key' => 2, 'title' => 'Áº∫Â∏≠‰∫ÜÂ§ßÁ∫¶ 50% ÁöÑ‰ºöËÆÆ'],
+          ['key' => 3, 'title' => 'Áº∫Â∏≠‰∫ÜÂ§ßÁ∫¶ 20-30% ÁöÑ‰ºöËÆÆ'],
+          ['key' => 4, 'title' => 'Áº∫Â∏≠‰∫ÜÂ§ßÁ∫¶ 10-20% ÁöÑ‰ºöËÆÆ'],
+          ['key' => 5, 'title' => 'ÈùûÂ∏∏ÂèØÈù†ÔºõÂè™Áº∫Â∏≠‰∫Ü‰∏Ä‰∏§Ê¨°‰ºöËÆÆ'],
+          ['key' => 6, 'title' => 'ÊÄªÊòØÂá∫Â∏≠'],
+      ],
+      'maxPts' => 6,
+  ],
+  ```
+3. Review Translations
+    * Ensure all translations accurately reflect the intended meaning.
+    * Double-check dynamic values (e.g., `key` and `type`) are not altered.
+
+4. Test Translations
+    * Save the updated file and test it in the application to confirm the translations are displayed correctly.
+
+## Step 3e: Translating a PHP Object with Language Tables
+
+When translating PHP objects containing language tables, such as `$_options_add`, you must focus on modifying the values of language keys for the target language. Here‚Äôs a step-by-step guide:
+
+
+1. Locate the Relevant Language Block
+    * Find the array structure with the language keys (e.g., `'en'`, `'es'`, `'zh'`, etc.) inside the PHP file.
+
+
+2. Add or Modify the Translations
+    1. **Add a new language key if it doesn't exist**:
+      - Copy the structure of an existing language block (e.g., `'en'` or `'es'`) and paste it as a new entry for the target language (e.g., `'zh'` for Chinese).
+      - Example:
+        ```php
+        'zh' => [
+            'CORPORATE_LOBBY' => 'ÂÖ¨Âè∏Â§ßÂéÖ',
+            'INSTRUCTOR_CENTER' => 'ËÆ≤Â∏à‰∏≠ÂøÉ',
+            'INDUSTRY' => 'Ë°å‰∏ö',
+            'YEAR' => 'Âπ¥‰ªΩ',
+            'DECISION' => 'ÂÜ≥Á≠ñ',
+            'PRACTICE' => 'ÁªÉ‰π†',
+            ...
+        ],
+        ```
+
+    2. **Translate the text values**:
+      - Only modify the values for each key, preserving the structure of the array.
+      - For example:
+        ```php
+        'CORPORATE_LOBBY' => 'Corporate Lobby', // Original
+        'CORPORATE_LOBBY' => 'ÂÖ¨Âè∏Â§ßÂéÖ',        // Translated
+        ```
+
+    3. **Preserve placeholders**:
+      - If the value contains placeholders like `%1$s` or `%2$s`, ensure these are retained in the translated text.
+      - Example:
+        ```php
+        'SIM_QUIZ_AVAILABLE' => 'Simulation Quiz %1$s Available', // Original
+        'SIM_QUIZ_AVAILABLE' => 'Ê®°ÊãüÊµãÈ™å %1$s ÂèØÁî®',            // Translated
+        ```
+
+        ---
+
+        #### Example Translation for Chinese
+        Here‚Äôs an excerpt of the `zh` (Chinese) translations added to `$_options_add`:
+
+        ```php
+        'zh' => [
+            'CORPORATE_LOBBY' => 'ÂÖ¨Âè∏Â§ßÂéÖ',
+            'INSTRUCTOR_CENTER' => 'ËÆ≤Â∏à‰∏≠ÂøÉ',
+            'INDUSTRY' => 'Ë°å‰∏ö',
+            'YEAR' => 'Âπ¥‰ªΩ',
+            'DECISION' => 'ÂÜ≥Á≠ñ',
+            'PRACTICE' => 'ÁªÉ‰π†',
+            'THREE_YEAR_STRATEGIC_PLAN' => '‰∏âÂπ¥ÊàòÁï•ËÆ°Âàí',
+            'SIMULATION_QUIZ' => 'Ê®°ÊãüÊµãÈ™å',
+            'AVAILABLE' => 'ÂèØÁî®',
+            'DEADLINE' => 'Êà™Ê≠¢Êó•Êúü',
+            'COMP_EXAM' => 'ÁªºÂêàËÄÉËØï',
+            'END_GAME' => 'Ê∏∏ÊàèÁªìÊùü',
+            'MID_GAME' => 'Ê∏∏Êàè‰∏≠Êúü',
+            'PEER_EVALUATIONS' => 'ÂêåË°åËØÑ‰º∞',
+            'COMPANY_PRESENTATIONS' => 'ÂÖ¨Âè∏‰ªãÁªç',
+            'CHAPTER' => 'Á´†ËäÇ',
+            'QUIZ' => 'ÊµãÈ™å',
+            'EXAM' => 'ËÄÉËØï',
+            'EXERCISES' => 'ÁªÉ‰π†',
+            'SIM_QUIZ_AVAILABLE' => 'Ê®°ÊãüÊµãÈ™å %1$s ÂèØÁî®',
+            'SIM_QUIZ_DEADLINE' => 'Ê®°ÊãüÊµãÈ™å %1$s Êà™Ê≠¢Êó•Êúü',
+            'CHAPTER_QUIZ' => 'Á´†ËäÇ %1$s ÊµãÈ™å',
+            'CHAPTER_QUIZ_AVAILABLE' => 'Á´†ËäÇ %1$s ÊµãÈ™åÂèØÁî®',
+            'CHAPTER_QUIZ_DEADLINE' => 'Á´†ËäÇ %1$s ÊµãÈ™åÊà™Ê≠¢Êó•Êúü',
+            ...
+        ],
+
+
+## Step 4: Propose Changes
+
+1. After making the edits, scroll to the bottom of the page.
+2. Add a **commit message** that describes your changes:
+    * Example:
+    ```
+    Update translations in home.zh.xlf
+3. Choose **"Create a new branch for this commit and start a pull request"**. GitHub will generate a default branch name (e.g., `patch-1`), but you can rename it to something more descriptive like `update-translations`.
+4. Click the Propose changes button.
+
+## Step 5: Create a Pull Request
+
+1. After proposing changes, GitHub will take you to the "Open a Pull Request" page.
+2. Add a title and description to explain your changes, for example:
+    * **Title**: "Update translations for `home.zh.xlf` file"
+    * **Description**: Fixed misspellings and translated new sentences.
+3. Click the Create pull request button.
+
+## Step 6: Monitor and Address Feedback
+
+1. Once the pull request is created, team members can review your changes.
+2. If any feedback is provided, repeat **Step 3** above, however you can commit the changes directly to your pull request branch rather than creating a new pull request.
+
+
+## For Subsequent Changes
+
+1. Repeat the steps all other files in the repository.
+2. Always ensure you are working on the latest version of the file by starting with the most up-to-date branch.
+
+## Key Tips
+
+1. **Use the Preview**: GitHub provides a "Preview Changes" tab to review your edits before committing.
+2. **Avoid Conflicts**: If someone else is working on the same file, coordinate with them to prevent conflicts.
+3. **Validate Your Edits**: Since there‚Äôs no XML validation in GitHub‚Äôs web editor, double-check for errors before submitting changes.
+
