@@ -1,0 +1,104 @@
+{{if !$options.edit}}
+Student / Participant Registration
+{{/if}}
+{{if !$options.edit}}
+The registration code you entered corresponds to the following:
+
+School / Organization:
+{{$options.school}}
+Instructor / Administrator:
+{{$options.t_fname}} {{$options.t_lname}}
+Course ID:
+{{$options.t_fname}} {{$options.t_lname}}
+Industry Number:
+Industry {{$options.industry}}
+Company Letter:
+{{$options.company_letter}}
+
+{{if !isset($options.paris) || !$options.paris}}
+If this is not the correct school, instructor, course, and industry number, then click the "Back" button. Check with your instructor to be sure that you have the right registration code. Otherwise continue with the registration form below.
+
+Back
+{{else}}
+If this is not the correct school, instructor, course, and industry number, then click here to contact technical support.
+
+{{/if}}
+
+{{/if}}
+{{if !$options.edit}}{{/if}} {{if $d.lti_id}} {{/if}} {{if $options.edit}}
+{{$options.prodname}} Account Information
+{{else}}
+Registration Form
+{{/if}} {{if !$options.edit}}
+Please complete the registration form below. It is important that you accurately fill in all blank fields. The information you provide is for {{$options.prodname}} use only. If you have any questions about the security of your personal information, consult our {{$options.prodname}} privacy policy.
+
+{{else}}
+
+{{/if}} {{if isset($errors) && $errors}}
+Please correct the errors below.
+
+{{* section name=error loop=$errors}}
+{{$errors[error].error}}
+{{/section *}} {{/if}} {{if !$options.edit}} {{if $d.isLTI == true}} {{if $d.fname != null && $d.lname != null}}
+Name:
+{{$d.fname}} {{$d.lname}}
+ Your name is imported from your learning management system and may not be changed.
+{{/if}} {{if $d.acct_name != null}}
+Email:
+{{$d.acct_name}}
+ Your email address is imported from your learning management system and may not be changed.
+{{/if}} {{/if}}
+Company Letter:
+
+-- Company --
+{{if isset($options.formErrors.company_id)}}{{$options.formErrors.company_id|default:''}}{{/if}}
+Specify the Company Letter assigned to you by your instructor.
+{{/if}} {{if isset($options.paris) && $options.paris}}
+E-mail Address:
+{{$d.acct_name}}
+
+This will be your {{$options.prodname}} User Name.
+{{/if}} {{if $d.isLTI == true && $d.fname != null}} {{else}}
+First Name:
+{{$d.fname}}
+{{if isset($options.formErrors.fname)}}{{$options.formErrors.fname|default:''}}{{/if}}
+Enter your given name above.
+{{/if}} {{if $d.isLTI == true && $d.lname != null}} {{else}}
+Last Name:
+{{$d.lname}}
+{{if isset($options.formstyles.lname)}}{{$options.formErrors.lname|default:''}}{{/if}}
+Enter your surname above.
+{{/if}}
+Student ID:
+{{$d.title}}
+{{if isset($options.formErrors.title)}}{{$options.formErrors.title|default:''}}{{/if}}
+Official college/university student ID.
+Time Zone:
+
+-- Time Zone --
+{{if isset($options.formErrors.timezone_id)}}{{$options.formErrors.timezone_id|default:''}}{{/if}}
+Select your time zone above.
+{{if !isset($options.paris) || !$options.paris}} {{if $d.isLTI == true && $d.acct_name != null}} {{else}}
+E-mail Address:
+{{$d.acct_name}}
+{{if isset($options.formErrors.acct_name)}}{{$options.formErrors.acct_name|default:''}}{{/if}}
+This will be your {{$options.prodname}} User Name.
+Confirm E-mail:
+{{$d.acct_name2}}
+{{if isset($options.formErrors.acct_name2)}}{{$options.formErrors.acct_name2|default:''}}{{/if}}
+Confirm your e-mail address here.
+{{/if}}
+Password:
+•••••••••••••
+{{if isset($options.formErrors.passwd)}}{{$options.formErrors.passwd}}{{/if}}
+Create a password that is 5 to 20 characters in length.
+Confirm Password:
+•••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+{{if isset($options.formErrors.password2)}}{{$options.formErrors.password2}}{{/if}}
+Enter your password again for verification.
+{{/if}}
+{{if $options.edit}} Update Information {{else}} {{if isset($options.paris) && $options.paris}}Complete{{else}}Continue{{/if}} Registration {{/if}}
+{{if isset($options.paris) && $options.paris}}
+To change your password or email address, click here.
+
+{{/if}}
