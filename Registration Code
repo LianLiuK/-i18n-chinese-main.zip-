@@ -1,0 +1,47 @@
+{{if isset($options.ajax) && $options.ajax != false}} {{if isset($options.empty)}}
+{{include file="./_RegistrationCodeTOSError.html"}}You must enter a complete Company Registration Code.
+{{elseif isset($options.invalid)}}
+{{include file="./_RegistrationCodeTOSError.html"}}Invalid Company Registration Code.
+Please confirm with your Instructor.
+{{elseif isset($options.full)}}
+{{include file="./_RegistrationCodeTOSError.html"}}No additional users may register for company {{$d.reg3|upper}} in this industry. There are already {{$options.num_members}} co-managers.
+{{elseif isset($options.must_agree)}}
+{{include file="./_RegistrationCodeTOSError.html"}}
+{{/if}} {{else}} {{if isset($options.wrong_site)}}
+Incorrect Website
+Notice
+The code you entered is for the {{$options.correct_sim_name}} simulation.
+
+Be sure you go to {{$options.correct_domain}} to access your account.
+
+Go to {{$options.correct_sim_name}} Registration
+
+{{else}}
+Begin Account Registration
+{{if $page_name == 'users/RegistrationCode.html'}}
+{{/if}} Watch Video of Registration Procedure Enter the {{$options.prodname}} Company Registration Code provided by your instructor.
+{{$d.reg1|default:
+ – 
+{{$d.reg2|default:
+ – 
+{{$d.reg3|default:
+Example:
+12345
+–
+ABC
+–
+A
+{{if isset($options.empty)}}
+You must enter a complete Company Registration Code.
+{{elseif isset($options.invalid)}}
+Invalid Company Registration Code.
+Please confirm with your instructor.
+{{elseif isset($options.full)}}
+No additional users may register for company {{$d.reg3|upper}} in this industry. There are already {{$options.num_members}} co-managers.
+{{/if}}
+   I accept the the {{$options.domain}}.com Terms of Use.
+If you do not know your Company Registration Code, then you cannot create an account at this time.
+To find out what your code is, contact your course instructor or game administrator.
+Then return here to begin account registration.
+
+{{/if}} {{/if}}
