@@ -1,9 +1,9 @@
 $d.template=='instructor'}}
-HelloProfessor教授您好{{$d.name}}:
+教授您好{{$d.name}}:
 最佳战略邀请赛（BSI）是全球高绩效BSG公司之间的全球竞争。所有在贵校进
-行的模拟练习中获得第一名的学生团队都被邀请参加BSI。
+行的模拟练习中获得第一名的学生团队都会被邀请参加BSI。
 BSG作者团队每年举行三次该竞赛（5月、8月和12月）,BSI活动支持联合国
-儿童基金会-UNICEF(www.unicef.org)每个选择接受邀请的参与人员都将被
+儿童基金会-UNICEF(www.unicef.org)，每个选择接受邀请的参与人员都将被
 收取$US{{$options.price_bsi}}美元的慈善登记费。所有收取的费用收益都
 将由globus软件公司捐赠给联合国儿童基金会。
 我们很高兴地通知您，您的一个或多个第一名团队已经在{{$d.year}}年
@@ -88,8 +88,8 @@ toparticipateinthe被你邀请参加最佳战略邀请赛的团队，意味着�
 参赛作品的决定。以不符合模拟精神的方式经营的公司将被取消竞争
 资格，并且不另行通知。
 至于我们，我们承诺将尽最大努力，以非常真实和公正的方式管理BSI比赛
-Goodluck祝好运,获得最佳战略!
+祝好运,获得最佳战略!
 {{/if}}
 GregStappenbeck
 IraThrasher
-BSI团里团队
+BSI管理团队
