@@ -1,0 +1,51 @@
+{{$options.prodname}} {{if $options.isPremium}}{{$options.text_package_name}}{{/if}} Registration
+Pre-Paid Registration
+I have a Prepaid Access Code purchased from the local campus
+book store (or issued to me by my school/instructor).
+
+{{if isset($options.empty) && $options.empty}}
+You must enter a complete Pre-Paid Access Code.
+
+{{elseif isset($options.invalid) && $options.invalid}}
+Pre-Paid Access Code Invalid.
+
+{{elseif isset($options.both_codes) && $options.both_codes}}
+You may only use one of the Pre-Paid Access Code Options below:
+
+{{/if}} {{if isset($options.isPremium) && $options.isPremium}}
+ 	PREM{{$options.num_cases}}	–	
+{{if isset($d.g_reg1)}}{{$d.g_reg1}}{{/if}}
+–	
+{{if isset($d.g_reg2)}}{{$d.g_reg2}}{{/if}}
+Example:	PREM{{$options.num_cases}}	–	ABCDE	–	12345
+{{else}}
+ 	
+{{if isset($d.g_reg1)}}{{$d.g_reg1}}{{/if}}
+–	
+{{if isset($d.g_reg2)}}{{$d.g_reg2}}{{/if}}
+Example:	ABCDE	–	12345
+— OR —
+ 	
+{{if isset($d.mh_reg1)}}{{$d.mh_reg1}}{{/if}}
+–	
+{{if isset($d.mh_reg2)}}{{$d.mh_reg2}}{{/if}}
+–	
+{{if isset($d.mh_reg3)}}{{$d.mh_reg3}}{{/if}}
+–	
+{{if isset($d.mh_reg4)}}{{$d.mh_reg4}}{{/if}}
+–	
+{{if isset($d.mh_reg5)}}{{$d.mh_reg5}}{{/if}}
+Example:	GRFU	–	BYHA	–	6MYJ	–	FGMK	–	F9XA
+{{/if}}
+{{if isset($d.block_credit_cards) && $d.block_credit_cards == 0}} 
+Credit/Debit Card Registration
+I will use a credit or debit card to pay the {{$options.prodname}} {{if $options.isPremium}}{{$options.text_package_name}}{{/if}} account registration fee.
+
+
+Have your credit/debit card ready and click the 'Pay by Credit or Debit Card' button below:
+
+{{/if}}
+
+
+
+{{include file="templates/ReturnToGlobusHome.html"}}
