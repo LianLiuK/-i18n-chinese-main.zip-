@@ -2,5 +2,5 @@
 
 
 {{foreach from=$d.changes item=change}} {{/foreach}}
-Item	Old Value	New Value
+课目 	原价 	现价
 {{$change.item}}	{{if !$change.sign}}${{/if}}{{$change.old}}{{$change.sign}}	{{if !$change.sign}}${{/if}}{{$change.new}}{{$change.sign}}
