@@ -1,0 +1,6 @@
+以下成本和费率已发生改变，在 {{$options.prodname}} 行业中，
+
+
+{{foreach from=$d.changes item=change}} {{/foreach}}
+Item	Old Value	New Value
+{{$change.item}}	{{if !$change.sign}}${{/if}}{{$change.old}}{{$change.sign}}	{{if !$change.sign}}${{/if}}{{$change.new}}{{$change.sign}}
