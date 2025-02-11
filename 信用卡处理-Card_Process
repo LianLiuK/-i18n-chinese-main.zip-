@@ -1,0 +1,81 @@
+{{if isset($options.payflow_success) && $options.payflow_success}}
+Thank You
+{{if isset($options.isPremium) && $options.isPremium}}
+
+{{/if}}
+
+您的卡已成功扣款US $ {{$d.total}}
+交易确认 # {{$options.trans_id}}
+{{if isset($options.is_bsi_registration) && $options.is_bsi_registration}}
+感谢您注册参加{{$options.bsi_info.descript}}最佳策略邀请赛。
+
+在{{$options.bsi_info.date_details|date_format:"l, F jS"}}，您将收到一封包含您的BSI账户登录信息的电子邮件。
+
+祝好运
+
+{{elseif isset($options.bookstore) && $options.bookstore}}
+一封包含有“{{options.qty}}”份“{{options.prodname}}”产品以及“{{options.text_package_name}}”预付费访问码的 PDF 文件的电子邮件已发送至 {{options.email}} 。
+
+你也可以阅读并保存 pdf文件.
+
+如果您对付款有任何疑问，请参考代码{{$options.order_id}}-{{$options.trans_id}}。
+
+{{elseif isset($options.school_payment) && $options.school_payment}}
+我们的工作人员将收到您的付款通知，并在审核您的订单后发送您的预付费访问码（如果您尚未收到）。
+
+如果您对付款有任何疑问，请参考交易确认号以及您的发票号（如果有）。
+
+{{include file="templates/ReturnToInstructorCenter.html"}} {{else}} 继续进入企业大厅 {{/if}}
+{{elseif isset($options.payflow_declined) && $options.payflow_declined}}
+您的卡被拒绝
+{{if isset($options.isPremium) && $options.isPremium}}
+
+{{/if}}
+请换卡支付
+{{if isset($options.zip) && $options.zip || isset($options.cvv2) && $options.cvv2 || isset($options.payflow_insufficient_funds) && $options.payflow_insufficient_funds}}
+{{if isset($options.payflow_insufficient_funds) && $options.payflow_insufficient_funds}}
+余额不足付
+{{/if}} {{if isset($options.zip) && $options.zip}}
+账单地址与您填写的银行地址不一致.
+{{/if}} {{if isset($options.cvv2) && $options.cvv2}}
+密码输入不正确
+{{/if}}
+{{/if}} {{if isset($options.payflow_voice_request) && $options.payflow_voice_request}}
+您必须致电您的信用卡公司并确认您正在进行此笔交易，否则他们将不会批准该交易。您也可以尝试使用其他信用卡。
+{{/if}}
+{{if isset($options.bookstore) && $options.bookstore}} {{/if}} Try A Different Card
+{{elseif isset($options.payflow_unavailable) && $options.payflow_unavailable}}
+GLO-BUS Error
+GLO-BUS 目前该信用卡处理系统出现问题。
+请在几小时后重新注册
+对此暂时不便，我们深感抱歉
+{{elseif isset($options.payflow_billing_mismatch) && $options.payflow_billing_mismatch}}
+您的卡被拒绝
+{{if isset($options.isPremium) && $options.isPremium}}
+
+{{/if}}
+Incorrect Address
+您输入的付款地址与您在信用卡公司填写的地址不一致
+请致电 {{$options.support_number}}我们将帮助你完成支付
+
+{{elseif isset($options.payflow_cvv2_mismatch) && $options.payflow_cvv2_mismatch}}
+卡片验证码错误"
+{{if isset($options.isPremium) && $options.isPremium}}
+
+{{/if}}
+Please try a different card.
+您输入的验证码与银行记录的您所使用的信用卡/借记卡的验证码不匹配。
+
+您刚刚尝试支付的${{$d.total}}账户注册费将作为“待处理”费用显示在您的信用卡账户上，但该费用已被自动作废，将不会被收取。
+
+Option 1: 请再次核对卡片验证码并重试。
+Option 2: 请换卡支付
+{{if isset($options.bookstore) && $options.bookstore}} {{/if}} Try Again
+To pay the registration fee later, return to the {{$options.prodname}} 主页 并使用您刚刚为账户创建的用户名和密码登录。您将自动跳转至账户支付页面，在那里您可以尝试再次使用信用卡/借记卡进行支付。
+
+{{else}}
+系统出错
+在处理您的付款时，我们的服务器出现了错误。
+Y扣款失败.
+请稍后再尝试
+{{/if}}
