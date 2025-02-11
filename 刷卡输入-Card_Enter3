@@ -1,0 +1,114 @@
+{{if isset($d.show_downtime_message) && $d.show_downtime_message}}
+Account Activation Unavailable
+目前无法激活您的账户。我们的信用卡处理系统正在进行预定的维护，暂时无法处理您的信用卡付款。 您应在{{$d.maintenance_end|date_format:"%I:%M %p on %A, %B %e"}}之后返回此页面以激活您的账户。 点击屏幕底部的刷新链接，查看激活流程是否已重新可用。
+
+如果您在此时间之前离开此页面，请在主页的登录表单中输入您的电子邮件地址和密码，您将进入付款页面。 这将是您在本注册流程的前一步中输入的电子邮件地址和密码。
+
+点击此处刷新此屏幕并检查激活流程是否可用
+{{else}} {{if isset($options.is_bsi_registration) && $options.is_bsi_registration}}
+Complete the BSI-Registration Process
+{{elseif isset($options.school_payment) && $options.school_payment}}
+Pay For Multiple Pre-Paid Access Codes
+{{elseif isset($options.bookstore) && $options.bookstore}}
+Purchase {{$options.prodname}} {{$options.text_package_name}} Pre-Paid Access Codes
+{{if isset($options.isPremium) && $options.isPremium}}
+
+{{/if}}
+Course Information:
+Instructor:
+{{$options.game_info.t_fname}} {{$options.game_info.t_lname}}
+Course/Section ID:
+{{$options.game_info.cs_name}}
+School:
+{{$options.game_info.school}}
+ 
+Order ID:
+{{$options.order_id}}
+Number of Codes:
+{{$options.qty}}
+Cost per Code:
+US ${{$options.price_unit}}
+Total Due:
+US ${{$options.price_total}}
+{{else}}
+完成{{if isset($options.isPremium) && $options.isPremium}}{{$options.prodname}} {{$options.text_package_name}}{{/if}}注册流程
+{{/if}}
+{{if !isset($options.show_invoice_field) || !$options.show_invoice_field}} {{/if}} {{if isset($options.bookstore) && $options.bookstore}} {{/if}}
+{{if isset($errors)}}
+{{section name=error loop=$errors}}
+{{$errors[error].error}}
+{{/section}}
+{{/if}}
+Card Information:
+我们接受Visa、MasterCard、Discover和American Express。只需填写以下表格，指明支付款项应记入的信用卡账户，然后点击“查看付款信息”以在扣款前查看并确认您的信息。
+First Name:
+{{$d.fname}}
+Last Name:
+{{$d.lname}}
+Card Number:
+{{$d.acct}}
+Major Cards Accepted Major Cards Accepted Major Cards Accepted Major Cards Accepted
+Expiration Date:
+
+-- Month --
+ / 
+-- Year --
+Security Code:
+{{$d.cvv2}}
+{{if isset($options._creditpayment_international) && $options._creditpayment_international}}
+(optional)
+{{/if}}
+安全码是Visa、MasterCard背面签名栏上的最后3位数字，或者是American Express卡正面信用卡号码旁边的4位数字。
+{{if isset($options.show_invoice_field) && $options.show_invoice_field}}
+Email Address:
+{{$d.receipt_email}}
+发送收据邮件的电子邮件地址（可选）。
+Invoice Number:
+{{$d.invoice}}
+{{/if}} {{if isset($options.show_total_field) && $options.show_total_field}}
+Amount:
+US $
+{{$d.total}}
+您必须输入一个包含两位小数的金额（例如400.00）。
+{{/if}}
+{{if isset($options._creditpayment_international) && $options._creditpayment_international}} {{if !isset($options.bookstore) || !$options.bookstore}}
+View the payment form for US credit cards.
+{{/if}} {{/if}}
+{{if !isset($options._creditpayment_international) || !$options._creditpayment_international}}
+Card Billing Address:
+Street Address:
+{{$d.street}}
+City:
+{{$d.city}}
+State:
+
+-- State --
+Zip Code:
+{{$d.zip}}
+-
+{{$d.zip4}}
+{{if !isset($options.bookstore) || !$options.bookstore}}
+View the payment form for Non-US credit cards.
+{{/if}}
+{{/if}}
+{{if isset($options.school_payment) && $options.school_payment}}
+点击此按钮时，您的卡将不会被扣款。
+
+您将可以选择扣款或返回此页面以更正您的信息。
+
+{{elseif isset($options.bookstore) && $options.bookstore}}
+点击此按钮时，您的卡将不会被扣款。
+
+您将可以选择扣款或返回此页面以更正您的信息。
+
+{{else}}
+您的账户注册费用为US ${{$d.total}}。
+
+在下一页，您将查看您的付款信息，并可以选择扣款或返回此页面以更正您的信息。
+
+{{/if}}
+Review Payment Information
+{{$options.prodname}} 客服将很乐意回答您有关注册的任何问题。您可以通过以下任何方式联系我们：
+
+Email: 客服邮箱{{$options.domain}}.com
+电话: {{$options.support_number}}
