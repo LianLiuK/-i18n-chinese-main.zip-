@@ -1,0 +1,51 @@
+{{$options.prodname}} {{if $options.isPremium}}{{$options.text_package_name}}{{/if}} 注册
+预付注册
+我有一个在本地校园s
+书店购买的预付访问代码 （或由我的学校/导师发放给我的）。
+
+{{if isset($options.empty) && $options.empty}}
+您必须输入完整的预付访问代码。
+
+{{elseif isset($options.invalid) && $options.invalid}}
+预付访问代码无效
+
+{{elseif isset($options.both_codes) && $options.both_codes}}
+您只能使用以下一种预付访问代码选项：
+
+{{/if}} {{if isset($options.isPremium) && $options.isPremium}}
+ 	PREM{{$options.num_cases}}	–	
+{{if isset($d.g_reg1)}}{{$d.g_reg1}}{{/if}}
+–	
+{{if isset($d.g_reg2)}}{{$d.g_reg2}}{{/if}}
+举例:	PREM{{$options.num_cases}}	–	ABCDE	–	12345
+{{else}}
+ 	
+{{if isset($d.g_reg1)}}{{$d.g_reg1}}{{/if}}
+–	
+{{if isset($d.g_reg2)}}{{$d.g_reg2}}{{/if}}
+举例:	ABCDE	–	12345
+— 或 —
+ 	
+{{if isset($d.mh_reg1)}}{{$d.mh_reg1}}{{/if}}
+–	
+{{if isset($d.mh_reg2)}}{{$d.mh_reg2}}{{/if}}
+–	
+{{if isset($d.mh_reg3)}}{{$d.mh_reg3}}{{/if}}
+–	
+{{if isset($d.mh_reg4)}}{{$d.mh_reg4}}{{/if}}
+–	
+{{if isset($d.mh_reg5)}}{{$d.mh_reg5}}{{/if}}
+举例:	GRFU	–	BYHA	–	6MYJ	–	FGMK	–	F9XA
+{{/if}}
+{{if isset($d.block_credit_cards) && $d.block_credit_cards == 0}} 
+信用卡/借记卡注册
+我将使用信用卡或借记卡支付{{$options.prodname}} {{if $options.isPremium}}{{$options.text_package_name}}{{/if}}账户注册费用。
+
+
+准备好您的信用卡/借记卡，然后点击下面的“使用信用卡或借记卡支付”按钮：
+
+{{/if}}
+
+
+
+{{include file="templates/ReturnToGlobusHome.html"}}
