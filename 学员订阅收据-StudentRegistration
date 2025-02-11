@@ -1,0 +1,28 @@
+
+{{$options.prodname}} 学员订阅收据
+{{$weburl}}
+Participant Subscription Information:
+姓名:	{{$d.receipt.fname}} {{$d.receipt.lname}}
+学校	{{$d.receipt.school}}
+课程名称:	{{$d.receipt.cs_name}}
+指导讲师:	{{$d.receipt.t_fname}} {{$d.receipt.t_lname}}
+团队:	行业 {{$d.receipt.i_name}} / Company {{$d.receipt.company}}
+† 您的订阅有效期至您所报名的{{$options.prodname}}练习结束为止
+（根据您的课程讲师/游戏管理员的安排）。
+交易
+日期		交易
+号码		信用卡
+号码		订阅费用
+(美元)		税
+(美元)		合计
+(美元)
+{{$d.receipt.trans_time|date_format:"%m/%d/%Y"}}		{{$d.receipt.trans_id}}		{{$d.receipt.acct}}		${{$d.receipt.total}}		$0.00		${{$d.receipt.total}}
+ 
+IMPORTANT:	此费用将在信用卡账单上显示为“GLO-BUS Software, Inc.”.
+当使用他人的信用卡（例如父母的信用卡）支付{{$options.prodname}}订阅费用时，请转发此收据，以避免信用卡账单上出现的收费引起混淆。
+Thank You.
+Glo-Bus Software, Inc.
+5710 Watermelon RD STE 200
+Northport, AL 35473
+
+所有问题请直接联系 CustomerService@{{$options.domain}}.com 或致电 205-722-9140.
