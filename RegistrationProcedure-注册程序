@@ -1,0 +1,37 @@
+{{if $options.isPremium}}{{$options.prodname}} {{$options.text_package_name}}{{else}}{{$options.prodname_long}}{{/if}} Registration Procedure — Industry {{$d.i_name}}
+{{if $options.isPremium}}
+重要的是，每位学生都需要注册一个{{$options.prodname}} {{$options.text_package_name}}账户。只有注册的学生才能访问{{$options.prodname}} {{$options.text_package_name}}的课程材料和功能（包括章节末尾的测验、由教师准备的考试、{{$options.prodname}}测验、同伴评估练习、在教师的在线成绩册中列出姓名等）。
+
+{{else}}
+重要的是，每位学生都需要注册一个{{$options.prodname}}账户。只有注册的学生才能随时随地访问{{$options.prodname}}企业大厅中的信息。此外，只有注册的学生才能在线完成测验1、测验2和同伴评估作业。每位注册学生的姓名将出现在教师的在线成绩册中，并且系统会自动为每位注册学生计算模拟成绩。
+
+{{/if}}
+致注册者
+
+启动您的网页浏览器并访问https://{{$d.product_link}}/。
+点击 新生按钮.
+输入 企业注册密码. 确保你输入正确的被分配的公司的注册码。 公司注册码为：
+{{section name=c loop=$d.codes}} {{/section}}
+公司名称	公司名称
+注册密码
+公司名称 {{$d.codes[c].letter}}	{{$d.codes[c].code}}
+填写简短的注册表格，并点击表格底部的“继续”按钮。
+选择支付类型:
+Use a Pre-Paid Access Code
+{{if $options.isPremium}} 在下一页上，输入您购买的预付费访问代码（PAC），然后点击PAC注册按钮。 {{else}} 在下一页上，输入您的预付费访问代码（PAC），然后点击PAC注册按钮。您的PAC可以在随教材附带的3x5卡片上找到（假设您的教师特别订购了教材-模拟套餐，并且您从校园书店购买了新的教材-模拟套餐）。
+
+如果您购买的是二手教材，则应点击信用卡注册按钮。注册费用为{{$options.price}}美元，可以使用Visa、MasterCard或American Express支付。
+
+{{/if}}
+Use a Credit/Debit Card
+Then click the Credit/Debit Card Registration button on the next page. The registration fee is ${{$options.price}} for each team member. Have a credit/debit card ready. Payment may be made using Visa, MasterCard, Discover, or American Express. Should you not have a credit card, the easiest alternative is to use a teammate or friend's credit card to pay your registration fee and then reimburse him or her by cash or check.
+
+
+{{if $options.isPremium}}
+注册完成后，您将被引导至您的企业大厅页面，在那里您可以立即访问所有{{$options.prodname}} {{$options.text_package_name}}材料，并可以查看/打印教材章节、章节末尾的练习、{{$options.prodname_long}}的{{$d.student_manual}}，以及浏览所有课程材料和作业。您应该花15-20分钟熟悉企业大厅页面上的菜单、链接和信息。
+
+{{else}}
+注册完成后，您将被引导至您的企业大厅页面，在那里您可以查看或下载{{$d.student_manual}}，查看或打印决策时间表，并浏览所有其他解释{{$options.prodname}}如何运作的信息链接。重要的是您要花时间阅读这些信息链接，大约需要15分钟。
+
+{{/if}}
+在您方便的时候，您和您的团队成员应尽快确定一个公司名称，并通过企业大厅页面顶部的链接输入。
