@@ -1,0 +1,24 @@
+亲爱的教授 {{$d.lname}}:
+
+我是一名该模拟课程的联合创作人员 {{$options.prodname_long}} 很高兴得知您最近在www.{{$options.domain}}.com注册希望成为该课程的讲师. 为了帮助你判断是否适合教授这门课程 {{$options.prodname}} , 我建议你做以下三件事情：
+
+阅读《讲师指南》前面23页�—这是最快了解课程的一种方式 {{$options.prodname_long}},并为学生和教师提供的一系列内置功能, 以及在即将开启的课程中进行模拟建议。 找到《讲师指南》-点击教师中心页面左侧的“教师资源”菜单中的“教师要点”链接进入.
+查阅 {{$options.prodname}} 优惠礼包—一套性价比极高的在线策略课程文本模拟案例包——非常适合您—. 要预览和使用 {{$options.prodname_long}} 使用配套的文本和案例点击红色选框内 {{$options.prodname}} 优惠礼包 请前往教师中心页面左侧.
+最节省时间的方式来预览网站是观看教师站点视频导览和学生站点视频导览�要访问这两个视频，请点击教师中心页面左侧“教师资源菜单”中的视 Center).
+我邀请您探索教师资源菜单中的其他任何项目
+
+当然，我最希望您能加入其他使用 {{$options.prodname_long}} 的讲师和学校行列。{{$options.prodname_long}}. {{if isset($d.india_instructor) && $d.india_instructor == true}} 联系我们在印度的营销代理，eGalactic (egalactic@gmail.com or +91 9689889311/+91 9370859001) 获取更多您所在地区的价格信息 {{else}} Please {{if !isset($d.is_sales_rep_country) || $d.is_sales_rep_coe}}联系当地的local McGraw-Hill 代理 或者 {{/if}}e-mail CustomerService@{{$options.domain}}.com untry == falsabout 如何使用f {{$options.prodname_long}} 可以纳入您的课程，以及学生能够在线获取模拟练习的各种方式。 {{/if}}
+
+对你而言可能会有兴趣知道这个模拟 {{$options.prodname_long}} 通过2500名认证讲师在全球66个国家1050以上大学，对超过70万学员进行指导。《商业战略游戏》在全球取得成功有其充分的理由。” : 她提供了 一次非常深刻的学习体验�一款能够激发积极向上的能量和课堂上的活跃气氛、让学生全身心投入到课程内容之中，并有助于达成课程学习目标的产品。. 而且, {{$options.prodname}}与所有主流战略类书籍的内容紧密相关。
+
+再次感谢您的注册。我可以向你保证.{{$options.prodname}}我们创作团队将尽全力提供 {{$options.prodname_long}} 非常积极和成功的经验. 我非常期待您的回复， 同时也竭尽所能提供所有的支持 ，包括�各类答疑，建议和指导, 以及其他任何问题的解决。
+
+致敬,
+
+Arthur A. Thompson
+Co-author of The Business Strategy Game
+Emeritus Professor of Business Administration
+The University of Alabama
+
+Phone: 205-722-9145
+E-mail: athompso@cba.ua.edu
