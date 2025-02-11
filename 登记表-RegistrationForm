@@ -1,0 +1,105 @@
+{{if !$options.edit}}
+学生/参加人员注册
+{{/if}}
+{{if !$options.edit}}
+您输入的注册代码对应以下信息：
+
+学校/机构:
+{{$options.school}}
+指导讲师 / 管理员:
+{{$options.t_fname}} {{$options.t_lname}}
+课程ID:
+{{$options.t_fname}} {{$options.t_lname}}
+行业代码:
+行业{{$options.industry}}
+公司信函:
+{{$options.company_letter}}
+
+{{if !isset($options.paris) || !$options.paris}}
+I如果这不是正确的学校、导师、课程和行业编号,t请点击 "Back" 按键. 请与您的导师确认您拥有正确的注册代码。否则，请继续填写下面的注册表格。
+
+注册表格如下
+返回
+{{else}}
+如果这不是正确的学校、导师、课程和行业编号，请点击此处联系技术支持.
+
+{{/if}}
+
+{{/if}}
+{{if !$options.edit}}{{/if}} {{if $d.lti_id}} {{/if}} {{if $options.edit}}
+{{$options.prodname}} 账户信息
+{{else}}
+Registration Form
+{{/if}} {{if !$options.edit}}
+请填写下面的注册表格。请务必准确填写所有空白字段。 您提供的信息仅供{{$options.prodname}}使用如果您对个人信息的安全性有任何疑问，请参考我们的{{$options.prodname}} 隐私条例.
+
+{{else}}
+
+{{/if}} {{if isset($errors) && $errors}}
+请修改以下错误
+
+{{* section name=error loop=$errors}}
+{{$errors[error].error}}
+{{/section *}} {{/if}} {{if !$options.edit}} {{if $d.isLTI == true}} {{if $d.fname != null && $d.lname != null}}
+Name:
+{{$d.fname}} {{$d.lname}}
+ 您的姓名是从您的学习管理系统中导入的，无法更改。
+{{/if}} {{if $d.acct_name != null}}
+Email:
+{{$d.acct_name}}
+ 您的邮件地址是从您的学习管理系统中导入的，无法更改。
+{{/if}} {{/if}}
+公司字母:
+
+-- 公司 --
+{{if isset($options.formErrors.company_id)}}{{$options.formErrors.company_id|default:''}}{{/if}}
+请指定您的导师分配给您的公司字母。
+{{/if}} {{if isset($options.paris) && $options.paris}}
+E-mail 地址:
+{{$d.acct_name}}
+
+This will be your {{$options.prodname}} 用户名.
+{{/if}} {{if $d.isLTI == true && $d.fname != null}} {{else}}
+First Name:
+{{$d.fname}}
+{{if isset($options.formErrors.fname)}}{{$options.formErrors.fname|default:''}}{{/if}}
+在上面输入您的名字（不输入姓氏）.
+{{/if}} {{if $d.isLTI == true && $d.lname != null}} {{else}}
+姓氏:
+{{$d.lname}}
+{{if isset($options.formstyles.lname)}}{{$options.formErrors.lname|default:''}}{{/if}}
+在上面输入您的姓氏.
+{{/if}}
+Student ID:
+{{$d.title}}
+{{if isset($options.formErrors.title)}}{{$options.formErrors.title|default:''}}{{/if}}
+官方大学/学院得学生ID 信息
+Time Zone:
+
+-- Time Zone --
+{{if isset($options.formErrors.timezone_id)}}{{$options.formErrors.timezone_id|default:''}}{{/if}}
+选择你所在得时区
+{{if !isset($options.paris) || !$options.paris}} {{if $d.isLTI == true && $d.acct_name != null}} {{else}}
+E-mail 地址:
+{{$d.acct_name}}
+{{if isset($options.formErrors.acct_name)}}{{$options.formErrors.acct_name|default:''}}{{/if}}
+这将是你的 {{$options.prodname}} 用户名.
+确认 E-mail:
+{{$d.acct_name2}}
+{{if isset($options.formErrors.acct_name2)}}{{$options.formErrors.acct_name2|default:''}}{{/if}}
+在这里确认邮箱地址
+{{/if}}
+密码:
+•••••••••••••
+{{if isset($options.formErrors.passwd)}}{{$options.formErrors.passwd}}{{/if}}
+创建密码，5-20个字母数字.
+Confirm Password:
+•••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+{{if isset($options.formErrors.password2)}}{{$options.formErrors.password2}}{{/if}}
+再次输入密码以确认.
+{{/if}}
+{{if $options.edit}} 更新信息 {{else}} {{if isset($options.paris) && $options.paris}}完成{{else}}继续{{/if}} 注册 {{/if}}
+{{if isset($options.paris) && $options.paris}}
+修改密码或邮箱地址 点击这里.
+
+{{/if}}
