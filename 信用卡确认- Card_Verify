@@ -1,0 +1,72 @@
+请确认以下信息是否正确：
+{{if isset($errors)}}
+{{section name=error loop=$errors}}
+{{$errors[error].error}}
+{{/section}}
+{{/if}} {{if isset($options.isPremium) && $options.isPremium}}
+
+{{/if}} {{if isset($options.bookstore) && $options.bookstore}}
+Course Information:
+Instructor:
+{{$options.game_info.t_fname}} {{$options.game_info.t_lname}}
+Course/Section ID:
+{{$options.game_info.cs_name}}
+School:
+{{$options.game_info.school}}
+{{/if}}
+Charge Information:
+This charge will appear on your credit card statement as
+"GLO-BUS Software, Inc."
+{{if isset($options.bookstore) && $options.bookstore}}
+Order ID:
+{{$options.order_id}}
+Codes:
+{{$options.qty}} @ US ${{$options.price_unit}}
+ 
+{{/if}} {{if isset($options.show_invoice_field) && $options.show_invoice_field && isset($d.invoice) && $d.invoice}}
+Invoice Number:
+{{$d.invoice}}
+{{if isset($d.receipt_email) && $d.receipt_email}}
+收据邮箱地址:
+{{$d.receipt_email}}
+{{/if}}
+ 
+{{/if}}
+Amount to be Charged:
+US ${{$d.total}}
+ 
+姓名（与卡片一致）:
+{{$d.fname}} {{$d.lname}}
+{{if isset($options.show_company_field) && $options.show_company_field && isset($d.company) && $d.company}}
+公司名称:
+{{$d.company}}
+{{/if}}
+卡号
+{{$options.acct_printable}}
+有效期至:
+{{$options.expMonth}} / {{$d.expYear}}
+{{if isset($d.cvv2) && $d.cvv2}}
+卡片安全码
+{{$d.cvv2}}
+{{/if}} {{if !isset($options._creditpayment_international) || !$options._creditpayment_international}}
+账单地址:
+{{$d.street}}
+{{$d.city}}, {{$d.state}} {{$d.zip}}{{if $d.zip4}}-{{$d.zip4}}{{/if}}
+{{/if}}
+{{if isset($d.receipt_email) && $d.receipt_email}} {{/if}} {{if isset($options.bookstore) && $options.bookstore}} {{/if}}
+If the above information is NOT correct, click here to change billing information.
+{{if isset($d.receipt_email) && $d.receipt_email}} {{/if}} {{if isset($d.intl) && $d.intl == 1}}{{/if}} {{if isset($options.bookstore) && $options.bookstore}} {{/if}} {{if isset($options.school_payment) && $options.school_payment}}
+点击下面按键完成支付
+{{elseif isset($options.bookstore) && $options.bookstore}}
+点击下面按键完成购买
+{{elseif isset($options.is_bsi_registration) && $options.is_bsi_registration}}
+要完成您的BSI账户注册，请点击下面的按钮。
+{{else}}
+要完成您的账户注册，请点击下面的按钮。
+{{/if}}
+(Click one time only to avoid multiple charges.)
+授权
+{{$options.prodname}} 客户服务团队将很乐意解答您有关注册的任何问题。您可以通过以下任一方式联系我们：
+
+Email: 客服邮箱{{$options.domain}}.com
+电话： {{$options.support_number}}
