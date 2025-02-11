@@ -1,0 +1,47 @@
+{{if isset($options.ajax) && $options.ajax != false}} {{if isset($options.empty)}}
+{{include file="./_RegistrationCodeTOSError.html"}}您必须输入完整的公司注册代码。
+{{elseif isset($options.invalid)}}
+{{include file="./_RegistrationCodeTOSError.html"}}无效公司注册代码.
+请向您的导师确认
+{{elseif isset($options.full)}}
+{{include file="./_RegistrationCodeTOSError.html"}}公司{{$d.reg3|upper}}在此行业中不能再注册其他用户。 已经有{{$options.num_members}}位共同管理者。
+{{elseif isset($options.must_agree)}}
+{{include file="./_RegistrationCodeTOSError.html"}}
+{{/if}} {{else}} {{if isset($options.wrong_site)}}
+Incorrect Website
+N注意事项
+您输入的代码适用于{{$options.correct_sim_name}}模拟。
+
+请确保您访问{{$options.correct_domain}}以登录您的账户。
+
+在{{$options.correct_sim_name}} 进行注册
+
+{{else}}
+Begin Account Registration
+{{if $page_name == 'users/RegistrationCode.html'}}
+{{/if}} Watch Video of Registration Procedure Enter the {{$options.prodname}} Company Registration Code provided by your instructor.
+{{$d.reg1|default:
+ – 
+{{$d.reg2|default:
+ – 
+{{$d.reg3|default:
+举例
+12345
+–
+ABC
+–
+A
+{{if isset($options.empty)}}
+你必须输入完整的公司注册码
+{{elseif isset($options.invalid)}}
+无效公司注册码
+请跟你的导师确认
+{{elseif isset($options.full)}}
+公司{{$d.reg3|upper}}在此行业中不能再注册其他用户。 已经有{{$options.num_members}}位共同管理者。
+{{/if}}
+   我接受{{$options.domain}}.com Terms of Use.
+如果您不知道您的公司注册代码，那么您目前无法创建账户。
+要获取您的代码，请联系您的课程导师或游戏管理员。
+然后返回此处开始账户注册。
+
+{{/if}} {{/if}}
