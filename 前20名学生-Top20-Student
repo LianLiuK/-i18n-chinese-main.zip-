@@ -1,0 +1,20 @@
+Dear Team {{$d.name}}:
+
+{{if $d.multiple}}
+{{if $options.top20_info}} 恭喜在第{{$options.week_num}}周的{{$options.bsi_info.descript}}评选期间，贵公司在以下绩效标准上取得了全球前{{$options.number_of_top_teams}}的优异成绩。 {{else}} 祝贺贵公司在{{$options.week_start|date_format:"%e-%b-%y"}}至{{$options.week_end|date_format:"%e-%b-%y"}}这一周期间，在以下绩效标准上取得了全球前{{$options.number_of_top_teams}}的卓越成绩。 {{/if}}
+
+{{section name=s loop=$d.top20}}
+{{$d.top20[s].description}} - Your {{$d.top20[s].score_title}} of {{$d.top20[s].stat}} {{if $d.top20[s].tie}}tied for the{{else}}was the{{/if}} {{$d.top20[s].rank}} best {{$d.top20[s].score_title}} performance of the week, worldwide!
+{{/section}}
+您的导师也已收到一封电子邮件，确认贵公司在全球前{{$options.number_of_top_teams}}的卓越表现。
+{{else}} {{section name=s loop=$d.top20}}
+{{if $options.top20_info}} “恭喜您在全球 {{$options.number_of_top_teams}} 强团队中取得了优异的成绩，在{{$options.bsi_info.descript}}投票期间的第{{$options.week_num}}周，于{{$d.top20[s].description}}方面表现突出。” {{else}} 祝贺贵公司在{{$options.week_start|date_format:"%e-%b-%y"}}至{{$options.week_end|date_format:"%e-%b-%y"}}这一周期间，在{{$d.top20[s].description}}方面取得了全球前{{$options.number_of_top_teams}}的卓越成绩。 {{/if}} Your {{$d.top20[s].score_title}} of {{$d.top20[s].stat}} {{if $d.top20[s].tie}}tied for the{{else}}was the{{/if}} {{$d.top20[s].rank}} 最佳 {{$d.top20[s].score_title}} 全球范围内的表现 您的导师也已收到一封电子邮件，确认您在Top {{$options.number_of_top_teams}} {{$d.top20[s].description}}表现中的优异表现。
+
+{{/section}} {{/if}}
+每周一{{* 全球Top {{$options.number_of_top_teams}} *}}会发布上周表现最佳的公司名单。 共有四个全球Top {{$options.number_of_top_teams}}榜单：一个基于综合评分（当前年度），一个基于每股收益，一个基于平均股本回报率，以及一个基于股票价格。 {{if $options.top20_info}} 查看{{$options.bsi_info.descript}}投票期第{{$options.week_num}}周的全球 {{$options.number_of_top_teams}}榜单。 {{else}} 查看{{$options.week_start|date_format:"%e-%b-%y"}}至{{$options.week_end|date_format:"%e-%b-%y"}}期间的全球Top {{$options.number_of_top_teams}}榜单。 {{/if}}
+
+来自BSG的诚挚祝福
+
+Art Thompson
+Greg Stappenbeck
+Mark Reidenbach
