@@ -1,0 +1,84 @@
+<?php
+$_options_add = [
+    'languageTables' => [
+        'zh' => [
+            'CORPORATE_LOBBY' => '企业大厅',
+            'INSTRUCTOR_CENTER' => '讲师中心',
+            'INDUSTRY' => '行业',
+            'YEAR' => '年',
+            'DECISION' => '决策',
+            'PRACTICE' => '练习',
+            'THREE_YEAR_STRATEGIC_PLAN' => '三年战略计划',
+            'SIMULATION_QUIZ' => '模拟小测',
+            'AVAILABLE' => '可用的',
+            'DEADLINE' => '截止日期',
+            'COMP_EXAM' => '全面测试',
+            'END_GAME' => '最终阶段',
+            'MID_GAME' => '中期',
+            'PEER_EVALUATIONS' => '学员评估',
+            'COMPANY_PRESENTATIONS' => '公司介绍',
+            'CHAPTER' => '章节',
+            'QUIZ' => '小测',
+            'EXAM' => '考试',
+            'EXERCISES' => '练习',
+            'SIM_QUIZ_AVAILABLE' => '模拟小测 %1$s 可用',
+            'SIM_QUIZ_DEADLINE' => '模拟小测 %1$s 截止日期',
+            'CHAPTER_QUIZ' => '章节 %1$s 小测',
+            'CHAPTER_QUIZ_AVAILABLE' => '章节 %1$s 小测 可用',
+            'CHAPTER_QUIZ_DEADLINE' => '章节 %1$s 小测 截止日期',
+            'COMP_EXAM' => '全面考试',
+            'COMP_EXAM_AVAILABLE' => '全面考试 可用',
+            'COMP_EXAM_DEADLINE' => '全面考试 截止日期',
+            'PEER_EVALUATIONS_AVAILABLE' => '%1$s 学员评估 可用',
+            'PEER_EVALUATIONS_DEADLINE' => '%1$s学员评估 截止日期',
+            'EXAM_AVAILABLE' => '测验 %1$s 可用',
+            'EXAM_DEADLINE' => '考试 %1$s 截止日期',
+            'CHAPTER_EXERCISES' => '章节 %1$s E练习',
+            'CHAPTER_EXERCISES_AVAILABLE' => '章节 %1$s 练习 可用e',
+            'CHAPTER_EXERCISES_DEADLINE' => '章节 %1$s 练习 D截止日期e',
+            'RETAKE_CH_QUIZ' => '恢复 章节 %1$s Quiz',
+            'RETAKE_EXAM' => '恢复考试 %1$s',
+            'RETAKE_COMP_EXAM' => '恢复全面考试,
+            'RETAKE_SIM_QUIZ' => '恢复模拟小测 %1$s',
+
+
+            'REGISTRATION' => '注册',
+
+            'SYSTEM_EOQMESSAGE_PRACTICE_SUBJECT' => '%1$s 行业 %2$s 年 $3$s (练习) 结果已生成',
+            'SYSTEM_EOQMESSAGE_SUBJECT' => '%1$s 行业 %2$s 年 $3$s 结果已生',
+
+            'FORGOT_PASSWORD_EMAIL_NOT_EXIST' => '“该邮箱地址未注册任何账户.',
+            'FORGOT_PASSWORD_ACCOUNT_EXPIRED' => '账户已过期.',
+            'FORGOT_PASSWORD_EMAIL_SEND_SUBJECT' => '重置 %1$s.com 密码',
+            'FORGOT_PASSWORD_EMAIL_SEND_ERROR' => '重置邮件发送失败',
+
+            'RESET_PASSWORD_CHECK_INVALID_PARAMS' => '密码重置链接无效，请重新尝试',
+            'RESET_PASSWORD_CHECK_NO_REQUEST' => '密码重置链接无效，请重新尝试',
+            'RESET_PASSWORD_CHECK_EXPIRED' => '密码重置链接已过期，请重新尝试',
+            'RESET_PASSWORD_CHECK_INVALID_SCHOOL' => '密码重置链接无效，请重新尝试',
+
+            'RESET_PASSWORD_INVALID_SPACE' => '你的密码不能含有空格',
+            'RESET_PASSWORD_INVALID_LENGTH' => '密码长度不能少于7个字.',
+
+
+            'REGISTRATION_INSTRUCTOR_WELCOME_SUBJECT' => '以下是一些建议，用于确定 %1$s 是否适合您的课程',
+            'REGISTRATION_INSTRUCTOR_WELCOME_DAN_SUBJECT' => '与有经验的用户讨论您对 %1$s 模拟的具体需求',
+
+            //'REGISTRATION_STUDENT_PAC_ERROR_TERMS' => '你必须同意使用条款',
+            //'REGISTRATION_STUDENT_PAC_ERROR_CODE_FORMAT' => '你的代码与示例格式不匹配。',
+            'REGISTRATION_STUDENT_PAC_ERROR_CODE_INVALID' => " 我们无法确认您的代码。请确保您输入的代码正确无误，或与您的指导老师核实。",
+
+
+            'CREDIT_CARD_RECEIPT_INVOICE_SUBJECT' => '%1$s 付款 for 发票 %2$s',
+            'CREDIT_CARD_RECEIPT_BOOKSTORE_PACS_SUBJECT' => '%1$s %2$s 预付码 (订单号 ID: %3$s-%4$s)',
+            'CREDIT_CARD_RECEIPT_REGULAR_SUBJECT' => '发票 %1$s (%2$s.com) 注册',
+            'CREDIT_CARD_RECEIPT_REGULAR_WELCOME_SUBJECT' => '$%1$s 注册n',
+
+
+            'CREATE_INDUSTRY_SINGLE_REGISTRATION_CODES' => '%1$s - 注册码for 行业 %2$s',
+            'CREATE_INDUSTRY_MULTIPLE_REGISTRATION_CODES' => '%1$s - 注册码 for 行业 %2$s',
+            'CREATE_INDUSTRY_DEMO_EXISTING' => '您的账户中已经创建了一个现有的演示行业。',
+
+        ],
+    ],
+];
